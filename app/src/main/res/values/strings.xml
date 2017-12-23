@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Image Watermark</string>
+    <string name="select_image">Select Image</string>
+    <string name="select_watermark">Select Watermark</string>
+    <string name="watermark_properties">Watermark Properties</string>
+    <string name="percentage_of_image_size">Percentage of image size</string>
+    <string name="watermark">Watermark</string>
+    <string name="size_">Size:</string>
+    <string name="margins_">Margin:</string>
+    <string name="position">Position</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="right">Right</string>
+    <string name="left">Left</string>
+    <string name="horizontal">Horizontal</string>
+    <string name="vertical">Vertical</string>
+    <string name="centre">Centre</string>
+    <string name="select_image_error">Please select an image</string>
+    <string name="select_watermark_error">Please select a watermark</string>
+    <string name="generate_watermarked_img_first">Please generate a watermarked image first</string>
+    <string name="error_saving_img">Error while saving image</string>
+    <string name="file_saved">Saved \"%1$s\"</string>
+    <string name="open">Open</string>
+    <string name="no_storage_access">Storage cannot be accessed</string>
+    <string name="image_viewer_no">Image Viewers not found on this device</string>
+    <string name="storage_not_accessible">Storage cannot be accessed</string>
+    <string name="provider">com.jadebyte.imagewatermark</string>
+    <string name="generating_watermark">Generating watermark</string>
+</resources>

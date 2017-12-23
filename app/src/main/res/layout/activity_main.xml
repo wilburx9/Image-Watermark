@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jadebyte.imagewatermark.MainActivity"
+    android:id="@+id/root_view">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingBottom="@dimen/padding_medium"
+        android:layout_margin="@dimen/margin_medium">
+
+        <ImageView
+            android:id="@+id/result_image"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:contentDescription="@null"
+            android:src="@drawable/result_placeholder"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/save_result_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/padding_medium"
+            android:src="@drawable/save_result_image"
+            app:layout_constraintBottom_toBottomOf="@+id/result_image"
+            app:layout_constraintRight_toRightOf="@+id/result_image"/>
+
+
+        <View
+            android:id="@+id/border"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@color/divider"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result_image"/>
+
+        <ImageView
+            android:id="@+id/img_placeholder"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:padding="2dp"
+            android:background="@drawable/dark_border"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/select_img_btn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/select_img_btn"
+            app:srcCompat="@drawable/ic_image_grey"/>
+
+        <Button
+            android:id="@+id/select_img_btn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_x_large"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/select_image"
+            android:textSize="@dimen/text_size_x_small"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@+id/img_placeholder"
+            app:layout_constraintRight_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/border"/>
+
+        <ImageView
+            android:id="@+id/watermark_placeholder"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/dark_border"
+            app:layout_constraintBottom_toBottomOf="@+id/select_img_btn"
+            app:layout_constraintLeft_toRightOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/select_img_btn"
+            app:srcCompat="@drawable/ic_image_grey"/>
+
+        <Button
+            android:id="@+id/select_watermark_btn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_x_large"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/select_watermark"
+            android:textSize="@dimen/text_size_x_small"
+            app:layout_constraintLeft_toRightOf="@+id/watermark_placeholder"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/border"/>
+
+
+        <TextView
+            android:id="@+id/watermark_properties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_x_large"
+            android:text="@string/watermark_properties"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_watermark_btn"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@color/divider"
+            app:layout_constraintBottom_toBottomOf="@+id/watermark_properties"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/watermark_properties"
+            app:layout_constraintTop_toTopOf="@+id/watermark_properties"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@color/divider"
+            app:layout_constraintBottom_toBottomOf="@+id/watermark_properties"
+            app:layout_constraintLeft_toRightOf="@+id/watermark_properties"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/watermark_properties"/>
+
+        <TextView
+            android:id="@+id/size_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/size_"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toBottomOf="@+id/watermark_properties"/>
+
+        <CheckBox
+            android:id="@+id/percentage_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/percentage_of_image_size"
+            app:layout_constraintTop_toBottomOf="@+id/size_header"/>
+
+        <EditText
+            android:id="@+id/percentage_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_medium"
+            android:inputType="number"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/percentage_checkbox"
+            tools:text="20%"/>
+
+        <EditText
+            android:id="@+id/size_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/padding_medium"
+            android:enabled="false"
+            android:paddingRight="@dimen/padding_medium"
+            android:inputType="number"
+            app:layout_constraintBaseline_toBaselineOf="@+id/percentage_edit_text"
+            app:layout_constraintLeft_toRightOf="@+id/guideline"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="200px"/>
+
+        <TextView
+            android:id="@+id/margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/margins_"
+            android:textAllCaps="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/size_edit_text"/>
+
+        <EditText
+            android:id="@+id/margin_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            app:layout_constraintRight_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/margin"
+            tools:text="40px"/>
+
+        <TextView
+            android:id="@+id/position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/position"
+            android:textAllCaps="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/margin_edit_text"/>
+
+        <TextView
+            android:id="@+id/position_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/position"/>
+
+        <RadioGroup
+            android:id="@+id/position_radio_group_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/position_horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:id="@+id/left"
+                android:text="@string/left"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:id="@+id/centre_hor"
+                android:text="@string/centre"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:id="@+id/right"
+                android:checked="true"
+                android:text="@string/right"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/position_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:text="@string/vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/position_radio_group_horizontal"/>
+
+        <RadioGroup
+            android:id="@+id/position_radio_group_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/position_vertical">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:id="@+id/top"
+                android:text="@string/top"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:id="@+id/centre_ver"
+                android:text="@string/centre"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:checked="true"
+                android:id="@+id/bottom"
+                android:text="@string/bottom"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/watermark_btn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_x_large"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/watermark"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/position_radio_group_vertical"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
