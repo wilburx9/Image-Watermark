@@ -6,7 +6,7 @@ A example of how you can create watermarked bitmaps
 <p><img src="https://github.com/wilburt/Image-Watermark/blob/master/sample/screenshot2.png" width="350px" height="auto"/></p>
 
 <h3>Result</h3>
-<p><img src="https://github.com/wilburt/Image-Watermark/blob/master/sample/resultant_image.jpg" width="350px" height="auto"/></p>
+<p><img src="https://github.com/wilburt/Image-Watermark/blob/master/sample/resultant_image.jpg" width="700px" height="auto"/></p>
 
 <h3>Downloads</h3>
 <a href="https://github.com/wilburt/Image-Watermark/blob/master/sample/app-debug.apk?raw=true">Sample apk</a>
